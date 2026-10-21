@@ -95,7 +95,8 @@ export default {
       }
 
       return jsonResponse({ reply }, 200, origin);
-    } catch {
+    } catch (error) {
+      console.error("AI request failed:", error);
       return jsonResponse({
         error: "The AI service is temporarily unavailable. Please try again later."
       }, 502, origin);
